@@ -21,13 +21,18 @@ struct PlayMode : Mode {
 	struct Button {
 		uint8_t downs = 0;
 		uint8_t pressed = 0;
-	} left, right, down, up;
+	} left, right, down, up, space;
 
-	//some weird background animation:
+	//some weird background animation: 
 	float background_fade = 0.0f;
 
 	//player position:
-	glm::vec2 player_at = glm::vec2(0.0f);
+	glm::vec2 player_at = glm::vec2(0.0f, 200.0f);
+
+	// sprite positions:
+	std::array<glm::vec2, 11 > sprite_positions;
+
+	uint8_t sunscreen_attribute = 9;
 
 	//----- drawing handled by PPU466 -----
 
